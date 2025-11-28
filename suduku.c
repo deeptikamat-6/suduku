@@ -3,11 +3,18 @@
 
 void printsuduku(int suduku[][9]) {
     for(int i=0;i<9;i++){
-        for(int j=0;j<9;j++) {
-            printf("%d\t",suduku[i][j]);
+        if(i%3==0){
+            printf("----------------------------------\n");
         }
-        printf("\n");
+        for(int j=0;j<9;j++) {
+            if(j%3==0){
+                printf("| ");
+            }
+             printf("%d  ",suduku[i][j]);
+        }
+        printf("|\n");
     }
+    printf("----------------------------------\n");
 }
 
 bool issafe(int suduku[9][9],int row,int col,int digit) {
